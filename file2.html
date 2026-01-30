@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Youth Skills & Jobs Portal</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f4f6f8;
+}
+
+/* Navbar */
+nav{
+    background:#1e3c72;
+    padding:15px;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+nav h2{
+    margin:0;
+}
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+    font-weight:bold;
+}
+
+/* Hero */
+.hero{
+    background:linear-gradient(to right,#1e3c72,#2a5298);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+.hero h1{
+    font-size:36px;
+}
+.hero p{
+    font-size:18px;
+}
+
+/* Section */
+section{
+    padding:40px 20px;
+}
+section h2{
+    text-align:center;
+    color:#1e3c72;
+    margin-bottom:30px;
+}
+
+/* Cards */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+.card:hover{
+    transform:translateY(-5px);
+}
+.card h3{
+    color:#2a5298;
+}
+
+/* Button */
+button{
+    background:#1e3c72;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:5px;
+    cursor:pointer;
+}
+button:hover{
+    background:#2a5298;
+}
+
+/* Form */
+form{
+    max-width:400px;
+    margin:auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
+input, select{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
+
+/* Footer */
+footer{
+    background:#1e3c72;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2>YSJ Portal</h2>
+    <div>
+        <a href="#skills">Skills</a>
+        <a href="#jobs">Jobs</a>
+        <a href="#apply">Apply</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <h1>Build Skills, Get Jobs</h1>
+    <p>Free guidance for students & youth</p>
+</div>
+
+<section id="skills">
+    <h2>Top Skills</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Web Development</h3>
+            <p>HTML, CSS, JavaScript basics for beginners</p>
+        </div>
+        <div class="card">
+            <h3>Graphic Design</h3>
+            <p>Canva & Photoshop learning resources</p>
+        </div>
+        <div class="card">
+            <h3>MS Office</h3>
+            <p>Word, Excel & PowerPoint skills</p>
+        </div>
+    </div>
+</section>
+
+<section id="jobs">
+    <h2>Job Opportunities</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Internships</h3>
+            <p>Paid & unpaid internships for students</p>
+            <button onclick="showMsg('Internship')">View</button>
+        </div>
+        <div class="card">
+            <h3>Freelancing</h3>
+            <p>Online earning through skills</p>
+            <button onclick="showMsg('Freelancing')">View</button>
+        </div>
+        <div class="card">
+            <h3>Office Jobs</h3>
+            <p>Data entry & assistant jobs</p>
+            <button onclick="showMsg('Office Job')">View</button>
+        </div>
+    </div>
+</section>
+
+<section id="apply">
+    <h2>Quick Apply Form</h2>
+    <form onsubmit="applyNow(event)">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <select id="skill">
+            <option>Select Skill</option>
+            <option>Web Development</option>
+            <option>Graphic Design</option>
+            <option>MS Office</option>
+        </select>
+        <button type="submit">Apply Now</button>
+    </form>
+</section>
+
+<footer>
+    © 2026 Youth Skills & Jobs Portal
+</footer>
+
+<script>
+function showMsg(type){
+    alert(type + " opportunities coming soon");
+}
+
+function applyNow(e){
+    e.preventDefault();
+    let name = document.getElementById("name").value;
+    alert("Thank you " + name + ", your application is submitted");
+}
+</script>
+
+</body>
+</html>
